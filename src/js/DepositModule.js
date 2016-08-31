@@ -8,12 +8,16 @@ var DepositModule = (function (){
         var form =
             '<table border="1">' +
                 '<tr>' +
-                    '<td>Name</td>' +
+                    '<td>Name:</td>' +
                     '<td> <input type="text" id="person_name" /> </td>' +
                 '</tr>' +
                 '<tr>' +
-                    '<td>Deposit amount</td>' +
+                    '<td>Deposit amount:</td>' +
                     '<td> <input type="text" id="deposit_amount" /> </td>' +
+                '</tr>' +
+                '<tr>' +
+                    '<td>Fav color:</td>' +
+                    '<td> <select id="fav_color" /> </td>' +
                 '</tr>' +
             '</table>';
         $('#deposit_container').append(form);
@@ -23,10 +27,16 @@ var DepositModule = (function (){
         _depositFormModel.init();
         _depositFormModel.setPersonName('John');
         _depositFormModel.setAmount(453);
+        var colors = ['red', 'gree', 'blue', 'white'];
+        _depositFormModel.setFavColors(colors);
     };
 
     pub.getAmount = function(){
         console.log('amount: ' + _depositFormModel.getAmount());
+    };
+
+    pub.getSelectedColor = function(){
+        console.log('selectedColor: ' + JSON.stringify(_depositFormModel.getSelectedColor()));
     };
 
     return pub;
