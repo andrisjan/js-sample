@@ -3,15 +3,24 @@ var Model = (function (){
 
     var name = '';
     var amount = 0;
-
-    pub.setPersonName = function(name) {
-            this.name = name;
-            $('#person_name').val(this.name);
+    pub.init = function(){
+        $('#deposit_amount').on('input',function(){ // change paste keyup
+            amount = $(this).val()
+            console.log(amount);
+        });
     };
 
+    pub.setPersonName = function(name) {
+            name = name;
+            $('#person_name').val(name);
+    };
     pub.setAmount = function(amount){
-            this.amount = amount;
-            $('#deposit_amount').val(this.amount);
+            amount = amount;
+            $('#deposit_amount').val(amount);
+    };
+
+    pub.getAmount = function(){
+        return amount;
     };
 
 

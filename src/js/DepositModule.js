@@ -20,8 +20,13 @@ var DepositModule = (function (){
     };
 
     pub.processForm = function(){
+        _depositFormModel.init();
         _depositFormModel.setPersonName('John');
         _depositFormModel.setAmount(453);
+    };
+
+    pub.getAmount = function(){
+        console.log('amount: ' + _depositFormModel.getAmount());
     };
 
     return pub;
