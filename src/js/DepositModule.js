@@ -4,22 +4,9 @@ var DepositModule = (function (){
 
     pub.showDepositSection = function () {
         console.log("show deposit section: ");
+        var form = $('#sample-template').html();
+        var button = $('#sample-sub-template').html();
 
-        var form =
-            '<table border="1">' +
-                '<tr>' +
-                    '<td>Name:</td>' +
-                    '<td> <input type="text" id="person_name" /> </td>' +
-                '</tr>' +
-                '<tr>' +
-                    '<td>Deposit amount:</td>' +
-                    '<td> <input type="text" id="deposit_amount" /> </td>' +
-                '</tr>' +
-                '<tr>' +
-                    '<td>Fav color:</td>' +
-                    '<td> <select id="fav_color" /> </td>' +
-                '</tr>' +
-            '</table>';
         $('#deposit_container').append(form);
     };
 

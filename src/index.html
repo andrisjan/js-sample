@@ -19,12 +19,41 @@
     <input type="button" value="get amount" onclick="DepositModule.getAmount()" />
     <input type="button" value="get selected color" onclick="DepositModule.getSelectedColor()" />
     <button type="button" id="push-state"> Push state </button>
+    </br>
+    <input type="submit" value="push" />
 </form>
 
 <div id="deposit_container"></div>
 
+<script type="template" id="sample-template">
+    <table border="1">
+        <tr>
+            <td>Person name:</td>
+            <td> <input type="text" id="person_name" /> </td>
+        </tr>
+        <tr>
+            <td>Deposit amount:</td>
+            <td> <input type="text" id="deposit_amount" /> </td>
+        </tr>
+        <tr>
+            <td>Favorite color:</td>
+            <td> <select id="fav_color" /> </td>
+        </tr>
+        <tr>
+            <td id="button-placeholder"></td>
+            <td> </td>
+        </tr>
+    </table>
+</script>
+<script type="template" id="sample-sub-template">
+    <button type="button">This is sub template</button>
+</script>
+<script type="template" id="row-template">
+    <tr><td></td></tr>
+</script>
 <script>
     MyApp.init();
+    FileUploadModule.init();
 </script>
 </body>
 </html>

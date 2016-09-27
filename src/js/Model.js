@@ -14,6 +14,7 @@ var Model = (function (){
             console.log('amount: ' + _amount_text);
         });
         $('#fav_color').on('change', function() {
+            _colors_dropdown = [];
             for (var colK in _colors_dropdown){
                 if (_colors_dropdown[colK].key === $(this).val()){
                     _colors_dropdown[colK].selected = true;}

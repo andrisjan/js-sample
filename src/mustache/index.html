@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <script src="mustache.js"></script>
+    <script src="PersonModule.js"></script>
+</head>
+<style>
+    .alert{
+        border-color: red;
+    }
+</style>
+<body>
+
+<div id="container"></div>
+
+<script type="template" id="person-list-template">
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Color</th>
+            <th>Age</th>
+            <th>Delete</th>
+            <th>Edit</th>
+        </tr>
+        {{#persons}}
+        <tr>
+            <td>{{name}}</td>
+            <td>{{surname}}</td>
+            <td></td>
+            <td>{{age}}</td>
+            <td></td>
+            <td></td>
+        </tr>
+        {{/persons}}
+        <tr>
+            <td></td>
+            <td> <button id="add-new-person">Add new person</button> </td>
+        </tr>
+    </table>
+</script>
+
+<script type="template" id="new-person-template">
+    <table border="1">
+        <tr>
+            <td colspan="2"><button id="go-back-to-list">Go back</button></td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td><input type="text" id="person-name" class="simple {{name.class}}" value="{{name.value}}" /></td>
+        </tr>
+        <tr>
+            <td>Has hair</td>
+            <td><input type="checkbox" id="person-has-hair" {{hair.checked}} /></td>
+        </tr>
+        <tr>
+            <td>Color</td>
+            <td>
+                <select id="color-select">
+                    {{#colors}}
+                    <option value="{{id}}" {{selected}}>{{text}}</option>
+                    {{/colors}}
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td> <button id="create-new-person">Create</button> </td>
+        </tr>
+    </table>
+</script>
+
+<script>
+    PersonModule.init();
+</script>
+</body>
+</html>
